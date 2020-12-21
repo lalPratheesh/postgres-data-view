@@ -1,0 +1,116 @@
+<div>
+    <!-- Table -->
+    <table id='empTable' class='display dataTable'>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>business_name</th>
+                <th>base_category</th>
+                <th>detailed_category</th>
+                <th>exact_category</th>
+                <th>contact_nameid</th>
+                <th>designation</th>
+                <th>first_name</th>
+                <th>last_name</th>
+                <th>full_name</th>
+                <th>email</th>
+                <th>address</th>
+                <th>subrub</th>
+                <th>city</th>
+                <th>state_code</th>
+                <th>country</th>
+                <th>zip_code</th>
+                <th>latitude</th>
+                <th>longitude</th>
+                <th>region</th>
+                <th>phone</th>
+                <th>mobile</th>
+                <th>web</th>
+                <th>facebook</th>
+                <th>twitter</th>
+                <th>coordinates</th>
+                <th>year_founded</th>
+                <th>location_type</th>
+                <th>market_variable</th>
+                <th>no_of_employees</th>
+                <th>annual_revenue</th>
+                <th>sic</th>
+                <th>sic_code_description</th>
+                <th>sic_code_and_description</th>
+                <th>naics</th>
+                <th>industry</th>
+                <th>fax</th>
+                <th>public_private_company</th>
+                <th>firm_individual</th>
+                <th>credit_score_code</th>
+                <th>stock_exchange</th>
+                <th>stock_ticker_symbol</th>
+                <th>years_in_database</th>
+                <th>csv_type</th>
+                <th>linkedIn</th>
+            </tr>
+        </thead>
+
+    </table>
+</div>
+
+<!-- Script -->
+<script>
+    $(document).ready(function () {
+        $('#empTable').DataTable({
+            'processing': true,
+            'serverSide': true,
+            'serverMethod': 'post',
+            'ajax': {
+                'url': '/api/csvupload_csvfiledata'
+            },
+            'columns': [
+                { data: 'id' },
+                { data: 'business_name' },
+                { data: 'base_category' },
+                { data: 'detailed_category' },
+                { data: 'exact_category' },
+                { data: 'contact_name' },
+                { data: 'designation' },
+                { data: 'first_name' },
+                { data: 'last_name' },
+                { data: 'full_name' },
+                { data: 'email' },
+                { data: 'address' },
+                { data: 'subrub' },
+                { data: 'city' },
+                { data: 'state_code' },
+                { data: 'country' },
+                { data: 'zip_code' },
+                { data: 'latitude' },
+                { data: 'longitude' },
+                { data: 'region' },
+                { data: 'phone' },
+                { data: 'mobile' },
+                { data: 'web' },
+                { data: 'facebook' },
+                { data: 'twitter' },
+                { data: 'coordinates' },
+                { data: 'year_founded' },
+                { data: 'location_type' },
+                { data: 'market_variable' },
+                { data: 'no_of_employees' },
+                { data: 'annual_revenue' },
+                { data: 'sic' },
+                { data: 'sic_code_description' },
+                { data: 'sic_code_and_description' },
+                { data: 'naics' },
+                { data: 'industry' },
+                { data: 'fax' },
+                { data: 'public_private_company' },
+                { data: 'firm_individual' },
+                { data: 'credit_score_code' },
+                { data: 'stock_exchange' },
+                { data: 'stock_ticker_symbol' },
+                { data: 'years_in_database' },
+                { data: 'csv_type' },
+                { data: 'linkedIn' },
+            ]
+        });
+    });
+</script>

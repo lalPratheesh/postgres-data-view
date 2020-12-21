@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Data view</title>
+  <!-- Datatable CSS -->
+  <link href='DataTables/datatables.min.css' rel='stylesheet' type='text/css'>
+
+  <!-- jQuery Library -->
+  <script src="jquery-3.3.1.min.js"></script>
+
+  <!-- Datatable JS -->
+  <script src="DataTables/datatables.min.js"></script>
+</head>
+
+<body>
+  <div>
+    <ul>
+      <li><a href="/csvupload_csvfiledata"> csvupload_csvfiledata</a></li>
+      <li><a href="/csvupload_uploadnew"> csvupload_uploadnew</a></li>
+    </ul>
+    <% if(locals.table==='csvupload_csvfiledata' ) { %>
+      <%- include('upload1.ejs') %>
+    <% } %>
+
+    <% if(locals.table==='csvupload_uploadnew' ) { %>
+      <%- include('upload2.ejs') %>
+    <% } %>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<div>
+    <!-- Table -->
+    <table id='empTable' class='display dataTable'>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>business_name</th>
+                <th>designation</th>
+                <th>email</th>
+                <th>city</th>
+                <th>state_code</th>
+                <th>country</th>
+                <th>region</th>
+                <th>no_of_employees</th>
+                <th>annual_revenue</th>
+                <th>sic</th>
+                <th>naics</th>
+                <th>industry</th>
+                <th>public_private_company</th>
+                <th>csv_type</th>
+            </th>
+            </tr>
+        </thead>
+
+    </table>
+</div>
+
+<!-- Script -->
+<script>
+    $(document).ready(function () {
+        $('#empTable').DataTable({
+            'processing': true,
+            'serverSide': true,
+            'serverMethod': 'post',
+            'ajax': {
+                'url': '/api/csvupload_uploadnew'
+            },
+            'columns': [
+                { data: 'id' },
+                { data: 'business_name' },
+                { data: 'designation' },
+                { data: 'email' },
+                { data: 'city' },
+                { data: 'state_code' },
+                { data: 'country' },
+                { data: 'region' },
+                { data: 'no_of_employees' },
+                { data: 'annual_revenue' },
+                { data: 'sic' },
+                { data: 'naics' },    
+                { data: 'industry' },    
+                { data: 'public_private_company' },    
+                { data: 'csv_type' },    
+            ]
+        });
+    });
+</script>
