@@ -18,7 +18,7 @@
                 <th>industry</th>
                 <th>public_private_company</th>
                 <th>csv_type</th>
-            </th>
+                </th>
             </tr>
         </thead>
 
@@ -29,6 +29,8 @@
 <script>
     $(document).ready(function () {
         $('#empTable').DataTable({
+            "paging": true,
+            "searching": false,
             'processing': true,
             'serverSide': true,
             'serverMethod': 'post',
@@ -47,11 +49,22 @@
                 { data: 'no_of_employees' },
                 { data: 'annual_revenue' },
                 { data: 'sic' },
-                { data: 'naics' },    
-                { data: 'industry' },    
-                { data: 'public_private_company' },    
-                { data: 'csv_type' },    
-            ]
+                { data: 'naics' },
+                { data: 'industry' },
+                { data: 'public_private_company' },
+                { data: 'csv_type' },
+            ],
+            "lengthMenu": [10, 25, 50, 100, 500],
+            "dom": 'Blfrtip',
+            "buttons": [
+                {
+                    extend: 'csvHtml5',
+                    text: 'CSV',
+                    exportOptions: {
+                        rows: ':visible'
+                    }
+                }
+            ],
         });
     });
 </script>
