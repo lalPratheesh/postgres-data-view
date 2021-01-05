@@ -58,6 +58,8 @@
 <script>
     $(document).ready(function () {
         $('#empTable').DataTable({
+            "paging": true,
+            "searching": false,
             'processing': true,
             'serverSide': true,
             'serverMethod': 'post',
@@ -110,7 +112,18 @@
                 { data: 'years_in_database' },
                 { data: 'csv_type' },
                 { data: 'linkedIn' },
-            ]
+            ],
+            "lengthMenu": [10, 25, 50, 100, 500],
+            "dom": 'Blfrtip',
+            "buttons": [
+                {
+                    extend: 'csvHtml5',
+                    text: 'CSV',
+                    exportOptions: {
+                        rows: ':visible'
+                    }
+                }
+            ],
         });
     });
 </script>
